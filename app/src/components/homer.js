@@ -12,15 +12,15 @@ const MainDiv = styled.div`
     border-radius: 5px;
     box-shadow: -15px 15px 15px #9883ec;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 `;
 
 const Header = styled.h1`
     color: crimson;
     text-shadow: -3px 3px 3px black;
-    padding-top: 5px;
+    padding-top: 2px;
 `;
-
 
 const Button = styled.button`
     width: 35%;
@@ -34,14 +34,7 @@ const Button = styled.button`
     outline: none;
 `;
 
-const Quote = styled.h3`
-    padding: 5%;
-    margin-top: 2%;
-`;
-
 const Homer = props => {
-
-    
     return (
         <MainDiv>
             <Header>Classic Homer Gif</Header>
@@ -54,9 +47,6 @@ const Homer = props => {
                     </div>    
                 ))}
             </div>
-            {!props.activity && props.isLoading && (
-            <h2>Fetch Homer</h2>
-            )}
             {props.isLoading ? (
                 <Loader
                 type="Puff"
@@ -66,12 +56,8 @@ const Homer = props => {
                 timeout={3000} //3 secs
              />)
             : (
-              
-                
-                <Quote>{props.activity.quote}</Quote>
-            )}
-            
-            
+                <></>
+            )} 
         </MainDiv>
     )
 }
@@ -79,7 +65,6 @@ const Homer = props => {
 const mapStateToProps = state => {
     return {
         isLoading: state.isLoading,
-        activity: state.activity,
         error: state.error,
         gif: state.gif
     }

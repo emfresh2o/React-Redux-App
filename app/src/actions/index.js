@@ -5,7 +5,6 @@ export const fetchHomer = () => {
         dispatch({ type: 'FETCHING_HOMER_START' })
         axios.get('https://api.homer.rest/')
         .then (res => {
-            //res.data => activity
             dispatch({ type: 'FETCHING_DATA_SUCCESS', payload: res.data })
         })
         .catch(err => console.log(err))
