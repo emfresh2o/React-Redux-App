@@ -1,9 +1,13 @@
 import axios from "axios"
 
+export const FETCHING_HOMER_START = "FETCHING_HOMER-START";
+export const FETCHING_DATA_SUCCESS = "FETCHING_DATA_SUCCESS";
+export const HOMER_GIF = "HOMER-GIF";
+
 export const fetchHomer = () => {
     return dispatch => {
         dispatch({ type: 'FETCHING_HOMER_START' })
-        axios.get('https://api.homer.rest/')
+        axios.get('https://api.gfycat.com/v1/gfycats/search?search_text=homer')
         .then (res => {
             dispatch({ type: 'FETCHING_DATA_SUCCESS', payload: res.data })
         })

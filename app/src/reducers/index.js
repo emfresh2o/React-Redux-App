@@ -1,3 +1,5 @@
+import { FETCHING_HOMER_START, FETCHING_DATA_SUCCESS, HOMER_GIF } from '../actions';
+
 export const initialState = {
    isLoading: null,
    error: '',
@@ -14,12 +16,12 @@ export const reducer = (state = initialState, action) => {
        case 'FETCHING_DATA_SUCCESS':
            return {
                ...state,
-               isLoading: false,
+               isLoading: true,
            };
        case 'HOMER_GIF':
            return {
                ...state,
-               isLoading: false,
+               isLoading: true,
                gif: action.payload
            }
        default:
