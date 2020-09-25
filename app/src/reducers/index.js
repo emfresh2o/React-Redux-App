@@ -13,11 +13,11 @@ export const reducer = (state = initialState, action) => {
                ...state,
                isLoading: true
            }
-       case 'FETCHING_DATA_SUCCESS':
-           return {
-               ...state,
-               isLoading: true,
-           };
+    //    case 'FETCHING_DATA_SUCCESS':
+    //        return {
+    //            ...state,
+    //            isLoading: true,
+    //        };
        case 'HOMER_GIF':
            return {
                ...state,
